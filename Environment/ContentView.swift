@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
+        Text("Hello, world!")
         .padding()
+        .background(colorScheme == .dark ? Color.black : Color.white)
+        .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
     }
 }
 
